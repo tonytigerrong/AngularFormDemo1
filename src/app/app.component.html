@@ -1,8 +1,6 @@
 <div class="container-fluid">
 <h1>Bootcmp Enroll Form</h1>
-
-
-{{ name.invalid }} {{ name.touched }}
+{{ userForm.form.valid}}
 <form #userForm="ngForm">
   
   <div class="form-group">
@@ -90,6 +88,6 @@
       <input type="text" class="form-control" name="postalCode" [ngModel]="user.address.postalcode">
     </div>
   </div>
-  <button class="btn btn-primary" type="submit">Submit form</button>
+  <button [disabled]="userForm.form.invalid || hasError" class="btn btn-primary" type="submit">Submit form</button>
 </form>
 </div>
