@@ -12,6 +12,14 @@ export class AppComponent {
   topics = ["Angular","React","vue"];
   address = new Address("25 Innova Dr","Bedford","NS","B4B1T2");
   user = new  User("tony rong","tony@cd.com","902-234-1932",
-              "Angular","morning", true, this.address);
+              "default","morning", true, this.address);
+  hasError = true;
+  validateTopic(value){
+    if(value === "default"){
+      this.hasError=true;
+    }else{
+      this.hasError=false;
+    }
+  }
   
 }
