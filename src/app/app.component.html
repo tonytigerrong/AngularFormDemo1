@@ -1,22 +1,23 @@
 <div class="container-fluid">
 <h1>Bootcmp Enroll Form</h1>
 {{ userForm.value | json }}
+{{ user | json }}
 <form #userForm="ngForm">
   
   <div class="form-group">
     <label>Name</label>
-    <input name="name" type="text" class="form-control" ngModel>
+    <input name="name" type="text" class="form-control" [ngModel]="user.name">
   </div>
   <div class="form-group">
     <label for="">Email</label>
-    <input name="email" type="text" class="form-control" ngModel>
+    <input name="email" type="text" class="form-control" [ngModel]="user.email">
   </div>
   <div class="form-group">
     <label>Phone</label>
-    <input name="phone" type="tel" class="form-control" ngModel>
+    <input name="phone" type="tel" class="form-control" [ngModel]="user.phone">
   </div>
   <div class="form-group">
-    <select name="topic" id="" class="custom-select" ngModel>
+    <select name="topic" id="" class="custom-select" [ngModel]="user.topic">
       <option selected>I am interested in</option>
       <option *ngFor="let topic of topics">{{ topic }}</option>
     </select>
@@ -29,7 +30,7 @@
          name="timePreference" 
          class="form-check-input"
          value="morning"
-         ngModel>
+         [ngModel]="user.timePreference">
       <label for="" class="form-check-label">Morning(9AM - 12PM)</label>
     </div>
     <div class="form-check">
@@ -38,32 +39,32 @@
         name="timePreference" 
         class="form-check-input"
         value="evening"
-        ngModel>
+        [ngModel]="user.timePreference">
       <label for="" class="form-check-label">Evening(5PM - 8PM)</label>
     </div>
   </div>
 
   <div class="form-check mb-3">
-    <input name="promot" type="checkbox" class="form-check-input" ngModel>
+    <input name="promot" type="checkbox" class="form-check-input" [ngModel]="user.promto">
     <label for="" class="form-check-label">Send me promotional offers</label>
   </div>
 
   <div ngModelGroup="address">
     <div class="form-group">
       <label>Street</label>
-      <input type="text" class="form-control" name="street" ngModel>
+      <input type="text" class="form-control" name="street" [ngModel]="user.address.street">
     </div>
     <div class="form-group">
       <label>City</label>
-      <input type="text" class="form-control" name="city" ngModel>
+      <input type="text" class="form-control" name="city" [ngModel]="user.address.city">
     </div>
     <div class="form-group">
       <label>State</label>
-      <input type="text" class="form-control" name="state" ngModel>
+      <input type="text" class="form-control" name="state" [ngModel]="user.address.state">
     </div>
     <div class="form-group">
       <label>Postal Code</label>
-      <input type="text" class="form-control" name="postalCode" ngModel>
+      <input type="text" class="form-control" name="postalCode" [ngModel]="user.address.postalcode">
     </div>
   </div>
   <button class="btn btn-primary" type="submit">Submit form</button>

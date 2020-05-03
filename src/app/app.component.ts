@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-
+import  { User }  from './user';
+import { Address } from './address'
+import { from } from 'rxjs';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,4 +10,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'tdf';
   topics = ["Angular","React","vue"];
+  address = new Address("25 Innova Dr","Bedford","NS","B4B1T2");
+  user = new  User("tony rong","tony@cd.com",9022341923,
+              "Angular","morning", true, this.address);
+  
 }
