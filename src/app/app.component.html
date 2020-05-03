@@ -11,6 +11,7 @@
            type="text" class="form-control"
            [class.is-invalid]="name.invalid && name.touched" 
             [ngModel]="user.name">
+    <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is required</small>
   </div>
   <div class="form-group">
     <label for="">Email</label>
@@ -18,9 +19,17 @@
   </div>
   <div class="form-group">
     <label>Phone</label>
-    <input name="phone" type="tel" #phone="ngModel" pattern="^\d{3}-\d{3}-\d{4}$"
+    <input name="phone" type="tel" #phone="ngModel" required pattern="^\d{3}-\d{3}-\d{4}$"
           class="form-control" [class.is-invalid]="phone.invalid && phone.touched"
           [ngModel]="user.phone">
+    <!--small class="text-danger"
+       [class.d-none]="phone.valid || phone.untouched">
+       Phone must be 10 digits split by this pattern 000-000-0000
+    </small-->
+    <div *ngIf="phone.errors && (phone.invalid || phone.touched)">
+      <small class="text-danger" *ngIf="phone.errors.required">Phone is required</small>
+      <small class="text-danger" *ngIf="phone.errors.pattern">Phone should be follow this pattern 000-000-0000</small>
+    </div>
   </div>
   <div class="form-group">
     <select name="topic" id="" class="custom-select" [ngModel]="user.topic">

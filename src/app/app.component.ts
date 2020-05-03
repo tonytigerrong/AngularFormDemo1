@@ -11,7 +11,7 @@ export class AppComponent {
   title = 'tdf';
   topics = ["Angular","React","vue"];
   address = new Address("25 Innova Dr","Bedford","NS","B4B1T2");
-  user = new  User("tony rong","tony@cd.com",9022341932,
+  user = new  User("tony rong","tony@cd.com","902-234-1932",
               "Angular","morning", true, this.address);
   
 }

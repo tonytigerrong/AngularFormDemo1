@@ -4,7 +4,7 @@ export class User {
     constructor(
         public name: string,
         public email: string,
-        public phone: number,
+        public phone: string,
         public topic: string,
         public timePreference: string,
         public promto: boolean,
