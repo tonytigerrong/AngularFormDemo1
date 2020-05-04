@@ -1,7 +1,7 @@
 <div class="container-fluid">
 <h1>Bootcmp Enroll Form</h1>
 {{ userForm.form.valid}}
-<form #userForm="ngForm">
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
   
   <div class="form-group">
     <label>Name</label>
