@@ -28,7 +28,7 @@ export class AppComponent {
     }
   }
   onSubmit(userForm){
-    console.log("userForm.form.value:",userForm.form.value);
+    console.log("userForm:",userForm);
     this.enrollmentService.enroll(userForm.form.value).subscribe(
       data => {
         console.log("data:",data);
